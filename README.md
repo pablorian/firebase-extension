@@ -1,27 +1,40 @@
-# FirebaseExtensionLibrary
+# FirebaseExtension
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
+A simple library to extends some usesfull function, directives and components for firebase and firestore DB.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You need to have installed nodeJS and Angular CLI as global, then Install firebase for angular in your angular project.
 
-## Build
+```
+npm install -g @angular/cli
+npm install firebase @angular/fire --save
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Installing
 
-## Running unit tests
+A step by step series of examples that tell you how to get a development env running
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+npm install firebaseExtension --save
+```
 
-## Running end-to-end tests
+## Contributing
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Please read [CONTRIBUTING.md](https://gist.github.com/firebase-extension/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Further help
+## Versioning
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/pablorian/firebase-extension/tags). 
+
+## Authors
+
+* **Rian Roque Pablo** - [PabloRian](https://github.com/pablorian)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
