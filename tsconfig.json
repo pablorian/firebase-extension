@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "firebase-extension": [
+        "dist/firebase-extension"
+      ],
+      "firebase-extension/*": [
+        "dist/firebase-extension/*"
+      ]
+    }
   }
 }
