@@ -6,23 +6,18 @@ import {AngularFirestore} from '@angular/fire/firestore';
   selector: '[libFsList]',
   exportAs: 'fsList'
 })
-export class FsListDirective implements OnInit, OnChanges{
+export class FsListDirective implements OnInit{
 
   @Input()
   path: string;
   @Input()
   order: string;
-
   data: Observable<any[]>;
 
   constructor(public db: AngularFirestore) {
   }
 
   ngOnInit(): void {
-    this.init();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
     this.init();
   }
 
