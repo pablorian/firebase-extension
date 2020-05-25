@@ -1,0 +1,31 @@
+{
+  "name": "firebase-extension",
+  "version": "0.0.1",
+  "description": "Extensions for firebase and firestore db",
+  "author": "Rian Roque Pablo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pablorian/firebase-extension"
+  },
+  "bugs": {
+    "url": "https://github.com/pablorian/firebase-extension/issues"
+  },
+  "homepage": "https://github.com/pablorian/firebase-extension",
+  "keywords": [
+    "angular",
+    "firebase",
+    "firestore",
+    "directives",
+    "decorators",
+    "services",
+    "components"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@angular/fire": "^5.0.2",
+    "firebase": "^5.5.1"
+  },
+  "peerDependencies": {
+    "@angular/fire": "^5.0.2"
+  }
+}
