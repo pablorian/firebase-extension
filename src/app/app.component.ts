@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'firebaseExtensionLibrary';
+  userLogin;
+  userRegistry;
+
+  onLogin(e) {
+    this.userLogin = e;
+  }
+
+  onRegistry(e) {
+    this.userRegistry = e;
+  }
 }

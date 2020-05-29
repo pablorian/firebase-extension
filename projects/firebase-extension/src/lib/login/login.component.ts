@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import {UserManagerService} from '../user-manager.service';
+import {AngularFireAuth} from '@angular/fire/auth';
 
 @Component({
   selector: 'lib-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   @Output()
   onErrorLogin: EventEmitter<any> = new EventEmitter<any>()
 
-  constructor(public auth: AngularFireAuth, private userManager: UserManagerService) { }
+  constructor(public angularFireAuth: AngularFireAuth, private userManager: UserManagerService) { }
 
   ngOnInit() {
   }
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   async login() {
     if (this.email && this.password) {
       try {
-        const user = await this.auth.auth.signInWithEmailAndPassword(this.email, this.password);
+        const user = await this.angularFireAuth.signInWithEmailAndPassword(this.email, this.password);
         this.userManager.user = user;
         this.onLogin.emit(user);
       } catch (e) {
@@ -32,7 +32,4 @@ export class LoginComponent implements OnInit {
       }
     }
   }
-
-
-
 }

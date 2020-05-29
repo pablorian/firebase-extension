@@ -26,5 +26,8 @@
         "dist/firebase-extension/*"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false
   }
 }

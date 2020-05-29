@@ -8,10 +8,8 @@ caca
   {{(fsDoc.data | async)?.nombre}}
 </div>
 
-<lib-login>
+<lib-login (onLogin)="onLogin($event)"></lib-login>
+<div *ngIf="userLogin">{{userLogin | json}}</div>
 
-</lib-login>
-
-<lib-registry>
-
-</lib-registry>
+<lib-registry (onRegistry)="onRegistry($event)"></lib-registry>
+<div *ngIf="userLogin">{{userRegistry | json}}</div>

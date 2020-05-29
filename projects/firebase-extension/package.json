@@ -22,10 +22,16 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@angular/fire": "^5.0.2",
-    "firebase": "^5.5.1"
+    "@angular/fire": "^6.0.0",
+    "@angular/forms": "^9.1.9",
+    "firebase": "^7.14.5"
   },
   "peerDependencies": {
-    "@angular/fire": "^5.0.2"
+    "@angular/common": "^9.0.7",
+    "@angular/core": "^9.0.7",
+    "@angular/forms": "^9.1.9",
+    "tslib": "^1.10.0",
+    "@angular/fire": "^6.0.0",
+    "firebase": "^7.14.5"
   }
 }

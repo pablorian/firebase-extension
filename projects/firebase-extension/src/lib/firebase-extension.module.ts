@@ -5,20 +5,24 @@ import { AngularFireModule } from '@angular/fire';
 import { FsDocDirective } from './fsDoc/fs-doc.directive';
 import { LoginComponent } from './login/login.component';
 import { RegistryComponent } from './registry/registry.component';
-import {FormsModule} from '@angular/forms';
-import {UserManagerService} from './user-manager.service';
+import { UserManagerService } from './user-manager.service';
+import { FormsModule} from '@angular/forms';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
     FsListDirective,
     FsDocDirective,
     LoginComponent,
-    RegistryComponent
+    RegistryComponent,
+    UserProfileComponent
   ],
   imports: [
     AngularFireModule,
     AngularFirestoreModule,
     FormsModule,
+    CommonModule
   ],
   providers: [
     AngularFirestore,
@@ -29,7 +33,7 @@ import {UserManagerService} from './user-manager.service';
     FsDocDirective,
     LoginComponent,
     RegistryComponent,
-    UserManagerService
+    UserProfileComponent
   ]
 })
 export class FirebaseExtensionModule { }

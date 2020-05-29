@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth';
 import {UserManagerService} from '../user-manager.service';
+import {AngularFireAuth} from '@angular/fire/auth';
 
 @Component({
   selector: 'lib-registry',
@@ -16,7 +16,7 @@ export class RegistryComponent implements OnInit {
   @Output()
   onRegistryError: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(public auth: AngularFireAuth, private userManager: UserManagerService) { }
+  constructor(public angularFireAuth: AngularFireAuth, private userManager: UserManagerService) { }
 
   ngOnInit() {
   }
@@ -24,8 +24,9 @@ export class RegistryComponent implements OnInit {
   async registry() {
     if (this.email && this.password) {
       try {
-        const user = await this.auth.auth.createUserWithEmailAndPassword(this.email, this.password);
-        await this.auth.auth.currentUser.sendEmailVerification();
+        const user = await this.angularFireAuth.createUserWithEmailAndPassword(this.email, this.password);
+        const email = await this.angularFireAuth.currentUser;
+        await email.sendEmailVerification();
         this.userManager.user = user;
         this.onRegistry.emit(user);
       } catch (e) {
