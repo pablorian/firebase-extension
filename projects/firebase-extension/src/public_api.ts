@@ -9,3 +9,5 @@ export * from './lib/fsDoc/fs-doc.directive';
 export * from './lib/login/login.component';
 export * from './lib/registry/registry.component';
 export * from './lib/user-profile/user-profile.component';
+export * from './lib/button-save/button-save.component';
+export * from './lib/user';

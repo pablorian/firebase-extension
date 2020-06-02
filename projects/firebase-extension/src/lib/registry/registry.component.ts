@@ -11,6 +11,7 @@ export class RegistryComponent implements OnInit {
 
   email: string;
   password: string;
+  passwordConfirm: string;
   @Output()
   onRegistry: EventEmitter<any> = new EventEmitter<any>();
   @Output()
@@ -22,13 +23,13 @@ export class RegistryComponent implements OnInit {
   }
 
   async registry() {
-    if (this.email && this.password) {
+    if (this.email && this.password && this.password === this.passwordConfirm) {
       try {
-        const user = await this.angularFireAuth.createUserWithEmailAndPassword(this.email, this.password);
+        const data = await this.angularFireAuth.createUserWithEmailAndPassword(this.email, this.password);
         const email = await this.angularFireAuth.currentUser;
         await email.sendEmailVerification();
-        this.userManager.user = user;
-        this.onRegistry.emit(user);
+        await this.userManager.createUserData(data.user);
+        this.onRegistry.emit(this.userManager.user);
       } catch (e) {
         this.onRegistryError.emit(e);
       }

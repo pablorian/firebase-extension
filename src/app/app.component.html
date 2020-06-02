@@ -1,15 +1,22 @@
-<!--The content below is only a placeholder and can be replaced.-->
-caca
-<!--<div libFsList #fsList="fsList" [path]="'proyectos'">-->
-<!--  <p *ngFor="let proyecto of fsList.data | async"> {{proyecto.nombre}}</p>-->
+<!--<div libFsDoc #fsDoc="fsDoc" [path]="'proyectos/5yhoPhDcTj2SwrI2x4aH'">-->
+<!--  {{(fsDoc.data | async)?.nombre}}-->
 <!--</div>-->
+<body class="text-center">
 
-<div libFsDoc #fsDoc="fsDoc" [path]="'proyectos/5yhoPhDcTj2SwrI2x4aH'">
-  {{(fsDoc.data | async)?.nombre}}
-</div>
+  <lib-login (onLogin)="onLogin($event)"></lib-login>
+  <div *ngIf="userLogin">{{userLogin | json}}</div>
 
-<lib-login (onLogin)="onLogin($event)"></lib-login>
-<div *ngIf="userLogin">{{userLogin | json}}</div>
+  <lib-registry (onRegistry)="onRegistry($event)"></lib-registry>
+  <div *ngIf="userLogin">{{userRegistry | json}}</div>
 
-<lib-registry (onRegistry)="onRegistry($event)"></lib-registry>
-<div *ngIf="userLogin">{{userRegistry | json}}</div>
+  <lib-user-profile></lib-user-profile>
+
+  <form class="form-save">
+    <input [(ngModel)]="data.valor1" name="data" class="form-control" placeholder="data" required="" autofocus="">
+    <input [(ngModel)]="data.valor2" name="data" class="form-control" placeholder="data" required="" autofocus="">
+    <input [(ngModel)]="data.valor3" name="data" class="form-control" placeholder="data" required="" autofocus="">
+    <input [(ngModel)]="doc" name="doc" class="form-control" placeholder="Doc" required="" autofocus="">
+    <input [(ngModel)]="pathCollection" name="pathCollection" class="form-control" placeholder="Path Collection" required="" autofocus="">
+    <lib-button-save [data]="data" [doc]="doc" [validationFn]="validationFn" [pathCollection]="pathCollection" (onSave)="onSave()"></lib-button-save>
+  </form>
+</body>

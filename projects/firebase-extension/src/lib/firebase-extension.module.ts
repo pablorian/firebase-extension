@@ -8,7 +8,8 @@ import { RegistryComponent } from './registry/registry.component';
 import { UserManagerService } from './user-manager.service';
 import { FormsModule} from '@angular/forms';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import {CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { ButtonSaveComponent } from './button-save/button-save.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {CommonModule} from '@angular/common';
     FsDocDirective,
     LoginComponent,
     RegistryComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ButtonSaveComponent
   ],
   imports: [
     AngularFireModule,
@@ -33,7 +35,8 @@ import {CommonModule} from '@angular/common';
     FsDocDirective,
     LoginComponent,
     RegistryComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ButtonSaveComponent
   ]
 })
 export class FirebaseExtensionModule { }

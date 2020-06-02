@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   async login() {
     if (this.email && this.password) {
       try {
-        const user = await this.angularFireAuth.signInWithEmailAndPassword(this.email, this.password);
-        this.userManager.user = user;
+        const login = await this.angularFireAuth.signInWithEmailAndPassword(this.email, this.password);
+        const user = await this.userManager.loadUserData(login.user);
         this.onLogin.emit(user);
       } catch (e) {
         this.onErrorLogin.emit(e);

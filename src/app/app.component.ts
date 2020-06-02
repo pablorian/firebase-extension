@@ -10,6 +10,14 @@ export class AppComponent {
   userLogin;
   userRegistry;
 
+  pathCollection = '';
+  doc = '';
+  data = {
+    valor1: '',
+    valor2: '',
+    valor3: ''
+  };
+
   onLogin(e) {
     this.userLogin = e;
   }
@@ -17,4 +25,13 @@ export class AppComponent {
   onRegistry(e) {
     this.userRegistry = e;
   }
+
+  validationFn(data) {
+    return true;
+  }
+
+  onSave() {
+    alert('se guardo');
+  }
+
 }

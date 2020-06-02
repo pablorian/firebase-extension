@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {UserManagerService} from '../user-manager.service';
+import {User} from '../user';
 
 @Component({
   selector: 'lib-user-profile',
@@ -9,7 +10,8 @@ import {UserManagerService} from '../user-manager.service';
 })
 export class UserProfileComponent implements OnInit {
 
-  userData: any = { displayName: '', email: '', img: ''};
+  loading = true;
+  userData: User;
 
   constructor(private userManager: UserManagerService) { }
 
@@ -18,13 +20,15 @@ export class UserProfileComponent implements OnInit {
   }
 
   onUserLoad() {
-    this.userManager.onUserChange.subscribe((user) => {
+    this.userManager.onUserDataLoad.subscribe((user) => {
       if (user) {
         this.userData = user;
         if (this.userData && !this.userData.img) {
           this.userData.img = 'https://source.unsplash.com/QAB-WJcbgJk/60x60';
         }
+        this.loading = false;
+        console.log('loading', this.loading);
       }
-    })
+    });
   }
 }
